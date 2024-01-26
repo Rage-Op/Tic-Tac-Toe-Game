@@ -4,7 +4,7 @@ let resetBtn = document.querySelector("#reset-btn");
 let newGameBtn = document.querySelector("#new-btn");
 let msgContainer = document.querySelector(".msg-container");
 let msg = document.querySelector("#msg");
-
+let turnCount = 0;
 // INITIAL PPLAYER TURN
 let turnO = true;
 
@@ -24,6 +24,8 @@ const winPatters = [
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
     console.log("box was clicked");
+    turnCount += 1;
+    console.log(turnCount);
     if (turnO === true) {
       box.innerText = "X";
       turnO = false;
@@ -35,6 +37,15 @@ boxes.forEach((box) => {
     checkWinner();
   });
 });
+
+// DRAW MATCH
+const checkDraw = () => {
+  if (turnCount > 8) {
+    msg.innerText = "Draw no one wins";
+    msgContainer.classList.remove("hide");
+    endGameDisable();
+  }
+}
 
 // DISPLAY WINNER
 const showWinner = (winner) => {
@@ -57,6 +68,7 @@ const resetGame = () => {
   enableBoxes();
   msgContainer.classList.add("hide");
   console.log("game reset");
+  turnCount = 0;
 };
 
 // ENABLE BOXES BACK
@@ -71,6 +83,7 @@ const enableBoxes = () => {
 // CHECKING FOR WINNING PATTERNS
 function checkWinner() {
   for (pattern of winPatters) {
+    checkDraw();
     let pos1Val = boxes[pattern[0]].innerText;
     let pos2Val = boxes[pattern[1]].innerText;
     let pos3Val = boxes[pattern[2]].innerText;
