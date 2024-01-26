@@ -58,3 +58,9 @@ body {
 .hide {
   display: none;
 }
+
+#made-by {
+  margin: 10px;
+  font-size: 2vmin;
+  color:aliceblue
+}
