@@ -4,9 +4,20 @@
 }
 
 body {
-  background-color: #548687;
+  /* background-color: #548687; */
+  background-image: url('./content/woodentable.avif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
   text-align: center;
   overflow: hidden;
+}
+
+main h1 {
+  color: rgb(255, 255, 255);  
+  font-size: 5rem;
 }
 
 .container {
@@ -33,18 +44,24 @@ body {
   border: none;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
   font-size: 8vmin;
-  color: #b0413e;
-  background-color: #ffffc7;
+  color: #3F3426;
+  /* background-color: #ffffc7; */
+  background-image: url('./content/boxTexture.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 #reset-btn,
 #new-btn {
   padding: 1rem;
-  font-size: 1.25rem;
-  background-color: #191913;
-  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+  border: 2px solid rgb(60, 29, 19);
+  color: rgb(60, 29, 19);
   border-radius: 1rem;
-  border: none;
 }
 
 #msg {
@@ -70,3 +87,4 @@ body {
   font-size: 2vmin;
   color: aliceblue;
 }
+
