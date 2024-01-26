@@ -40,12 +40,13 @@ boxes.forEach((box) => {
 
 // DRAW MATCH
 const checkDraw = () => {
-  if (turnCount > 8) {
+  if (turnCount == 9 && isWinner != true) {
     msg.innerText = "Draw no one wins";
     msgContainer.classList.remove("hide");
     endGameDisable();
   }
 }
+let isWinner = checkWinner();
 
 // DISPLAY WINNER
 const showWinner = (winner) => {
@@ -92,6 +93,7 @@ function checkWinner() {
       if (pos1Val == pos2Val && pos2Val == pos3Val) {
         console.log(pos1Val + " is winner");
         showWinner(pos1Val);
+        return true;
       }
     }
   }
